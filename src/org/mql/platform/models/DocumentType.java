@@ -9,6 +9,5 @@ public enum DocumentType {
 
   PRESENTATION,
 
-  COURSE,
-
+  COURSE
 }

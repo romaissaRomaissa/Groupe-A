@@ -10,6 +10,7 @@ are managed by the platform .
 - The project is built using the `Spring` ecosystem, so the deployment process is easy, you'll need `java`, and after 
 generating the war any web container will suffice, (here we used tomcat) .
 
+- `mysql` up and running on the default port and a database named `mql-platform`
 ### Contribution guidelines
 
 - Only team leads are allowed to submit pull requests to the central repository
