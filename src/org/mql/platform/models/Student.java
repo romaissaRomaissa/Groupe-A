@@ -1,11 +1,15 @@
 package org.mql.platform.models;
 
+import java.time.LocalDate;
 import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author mehdithe
@@ -32,6 +36,19 @@ public class Student extends User {
   )
   private Set<Team> teams;
 
+  private String cne;
+
+  private String cin;
+
+  @Temporal(TemporalType.DATE)
+  private LocalDate birthday;
+
+  @Enumerated
+  private Level level;
+
+  @Enumerated
+  private Status status;
+
   public Internship getEndOfStudiesProject() {
     return endOfStudiesProject;
   }
@@ -46,5 +63,53 @@ public class Student extends User {
 
   public void setModules(Set<Module> modules) {
     this.modules = modules;
+  }
+
+  public Set<Team> getTeams() {
+    return teams;
+  }
+
+  public void setTeams(Set<Team> teams) {
+    this.teams = teams;
+  }
+
+  public String getCne() {
+    return cne;
+  }
+
+  public void setCne(String cne) {
+    this.cne = cne;
+  }
+
+  public String getCin() {
+    return cin;
+  }
+
+  public void setCin(String cin) {
+    this.cin = cin;
+  }
+
+  public LocalDate getBirthday() {
+    return birthday;
+  }
+
+  public void setBirthday(LocalDate birthday) {
+    this.birthday = birthday;
+  }
+
+  public Level getLevel() {
+    return level;
+  }
+
+  public void setLevel(Level level) {
+    this.level = level;
+  }
+
+  public Status getStatus() {
+    return status;
+  }
+
+  public void setStatus(Status status) {
+    this.status = status;
   }
 }

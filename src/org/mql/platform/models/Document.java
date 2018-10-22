@@ -1,5 +1,6 @@
 package org.mql.platform.models;
 
+import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -8,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author mehdithe
@@ -25,6 +28,18 @@ public class Document {
 
   @Enumerated(EnumType.STRING)
   private DocumentType type;
+
+  private String name;
+
+  private String path;
+
+  private String description;
+
+  @Enumerated
+  private Language language;
+
+  @Temporal(TemporalType.TIMESTAMP)
+  private LocalDate createdAt;
 
   public Document() {
   }
@@ -51,5 +66,45 @@ public class Document {
 
   public void setType(DocumentType type) {
     this.type = type;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getPath() {
+    return path;
+  }
+
+  public void setPath(String path) {
+    this.path = path;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public LocalDate getCreatedAt() {
+    return createdAt;
+  }
+
+  public void setCreatedAt(LocalDate createdAt) {
+    this.createdAt = createdAt;
+  }
+
+  public Language getLanguage() {
+    return language;
+  }
+
+  public void setLanguage(Language language) {
+    this.language = language;
   }
 }
