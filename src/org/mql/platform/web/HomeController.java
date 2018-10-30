@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 public class HomeController {
 
   public String get() {
+  	// added a comment
     return "test";
   }
 }
