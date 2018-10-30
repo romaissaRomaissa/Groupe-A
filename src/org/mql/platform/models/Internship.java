@@ -25,12 +25,11 @@ public class Internship extends Experience {
   private Long id ;
   private String subject ;
   
-  @ManyToOne(fetch = FetchType.EAGER , cascade=CascadeType.ALL)
-  private Student student ;
+  @OneToOne(mappedBy = "endOfStudiesProject")
+  private Student student;
   
-  @ManyToOne(fetch =FetchType.EAGER)
-  @JoinColumn(name="enterprise_id")
-    private Enterprise enterprise;
+  @ManyToOne
+  private Enterprise enterprise;
   
     private String framing; 
     private boolean remuneration;

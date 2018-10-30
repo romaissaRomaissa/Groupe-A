@@ -1,5 +1,6 @@
 package org.mql.platform.models;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -31,9 +32,8 @@ public class Enterprise {
   private String webSite;
   private String type;
   
-  @OneToMany(targetEntity=Internship.class ,
-      fetch =FetchType.EAGER, cascade=CascadeType.ALL, mappedBy="enterprise")
-  private List<Internship> internShips = new Vector<>();
+  @OneToMany(mappedBy = "enterprise")
+  private List<Internship> internships = new ArrayList<>();
   
   private String coordinator;
   private Integer phoneNumber ;
