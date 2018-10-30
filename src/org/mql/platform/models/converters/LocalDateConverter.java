@@ -6,7 +6,7 @@ import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
 
 /**
- * converter that get's applied every time we save a {LocalDate} instance in our models
+ * Converter that get's applied every time we save a {LocalDate} instance in our models
  *
  * @author mehdithe
  */
