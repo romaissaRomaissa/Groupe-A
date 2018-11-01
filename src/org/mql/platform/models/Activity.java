@@ -1,6 +1,8 @@
 package org.mql.platform.models;
 
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 
 /**
@@ -11,7 +13,8 @@ public class Activity extends Publication {
 
   private String category;
 
-  private List<String> guests;
+  @ElementCollection
+  private List<String> guests = new ArrayList<>();
 
   public String getCategory() {
     return category;
