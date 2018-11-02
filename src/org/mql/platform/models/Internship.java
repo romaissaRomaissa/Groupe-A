@@ -1,16 +1,14 @@
 package org.mql.platform.models;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Vector;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -20,143 +18,138 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Internship extends Experience {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id ;
-  private String subject ;
-  
-  @OneToOne(mappedBy = "endOfStudiesProject")
-  private Student student;
-  
-  @ManyToOne
-  private Enterprise enterprise;
-  
-    private String framing; 
-    private boolean remuneration;
-    private boolean preEmployment;
-    private String job ;
-    
-    @Lob
-    private List<String>technologies = new Vector<>();
-    
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date startDate;
-    
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date endDate ;
-    
-    public Internship() {
-    student = new Student();
-    enterprise = new Enterprise();
-  }
-    
-    
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String subject;
 
-  public Internship(Long id, String subject, Student student, Enterprise enterprise,
-      List<String> technologies, Date startDate, Date endDate) {
-    super();
-    this.id = id;
-    this.subject = subject;
-    this.student = student;
-    this.enterprise = enterprise;
-    this.technologies = technologies;
-    this.startDate = startDate;
-    this.endDate = endDate;
-  }
+	@OneToOne(mappedBy = "endOfStudiesProject")
+	private Student student;
 
-  public Long getId() {
-    return id;
-  }
+	@ManyToOne
+	private Enterprise enterprise;
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+	private String framing;
+	private boolean remuneration;
+	private boolean preEmployment;
+	private String job;
 
-  public String getSubject() {
-    return subject;
-  }
+	private List<String> technologies = new Vector<>();
 
-  public void setSubject(String subject) {
-    this.subject = subject;
-  }
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date startDate;
 
-  public Student getStudent() {
-    return student;
-  }
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date endDate;
 
-  public void setStudent(Student student) {
-    this.student = student;
-  }
+	public Internship() {
+		student = new Student();
+		enterprise = new Enterprise();
+	}
 
-  public Enterprise getEnterprise() {
-    return enterprise;
-  }
+	public Internship(Integer id, String subject, Student student, Enterprise enterprise, List<String> technologies,
+			Date startDate, Date endDate) {
+		super();
+		this.id = id;
+		this.subject = subject;
+		this.student = student;
+		this.enterprise = enterprise;
+		this.technologies = technologies;
+		this.startDate = startDate;
+		this.endDate = endDate;
+	}
 
-  public void setEnterprise(Enterprise enterprise) {
-    this.enterprise = enterprise;
-  }
+	public Integer getId() {
+		return id;
+	}
 
-  public String getFraming() {
-    return framing;
-  }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-  public void setFraming(String framing) {
-    this.framing = framing;
-  }
+	public String getSubject() {
+		return subject;
+	}
 
-  public boolean isRemuneration() {
-    return remuneration;
-  }
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
 
-  public void setRemuneration(boolean remuneration) {
-    this.remuneration = remuneration;
-  }
+	public Student getStudent() {
+		return student;
+	}
 
-  public boolean isPreEmployment() {
-    return preEmployment;
-  }
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 
-  public void setPreEmployment(boolean preEmployment) {
-    this.preEmployment = preEmployment;
-  }
+	public Enterprise getEnterprise() {
+		return enterprise;
+	}
 
-  public String getJob() {
-    return job;
-  }
+	public void setEnterprise(Enterprise enterprise) {
+		this.enterprise = enterprise;
+	}
 
-  public void setJob(String job) {
-    this.job = job;
-  }
+	public String getFraming() {
+		return framing;
+	}
 
-  public List<String> getTechnologies() {
-    return technologies;
-  }
+	public void setFraming(String framing) {
+		this.framing = framing;
+	}
 
-  public void setTechnologies(List<String> technologies) {
-    this.technologies = technologies;
-  }
+	public boolean isRemuneration() {
+		return remuneration;
+	}
 
-  public Date getStartDate() {
-    return startDate;
-  }
+	public void setRemuneration(boolean remuneration) {
+		this.remuneration = remuneration;
+	}
 
-  public void setStartDate(Date startDate) {
-    this.startDate = startDate;
-  }
+	public boolean isPreEmployment() {
+		return preEmployment;
+	}
 
-  public Date getEndDate() {
-    return endDate;
-  }
+	public void setPreEmployment(boolean preEmployment) {
+		this.preEmployment = preEmployment;
+	}
 
-  public void setEndDate(Date endDate) {
-    this.endDate = endDate;
-  }
+	public String getJob() {
+		return job;
+	}
 
-  @Override
-  public String toString() {
-    return "Internship [id=" + id +
-        ", subject=" + subject +
-        ", student=" + student +
-        ", enterprise=" + enterprise+ "]";
-  }
+	public void setJob(String job) {
+		this.job = job;
+	}
+
+	public List<String> getTechnologies() {
+		return technologies;
+	}
+
+	public void setTechnologies(List<String> technologies) {
+		this.technologies = technologies;
+	}
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+	@Override
+	public String toString() {
+		return "Internship [id=" + id + ", subject=" + subject + ", student=" + student + ", enterprise=" + enterprise
+				+ "]";
+	}
 }
