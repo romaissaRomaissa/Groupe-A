@@ -1,14 +1,19 @@
 package org.mql.platform.models;
 
 import java.util.List;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
 
 /**
  * @author mehdithe
  */
+@Entity
 public class Event extends Publication {
 
+  @ElementCollection
   private List<String> guests;
 
+  @ElementCollection
   private List<String> organizers;
 
   public Event() {
