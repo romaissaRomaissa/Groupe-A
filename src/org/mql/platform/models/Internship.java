@@ -1,8 +1,6 @@
 package org.mql.platform.models;
 
 import java.util.Date;
-import java.util.List;
-import java.util.Vector;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,6 +19,7 @@ public class Internship extends Experience {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
 	private String subject;
 
 	@OneToOne(mappedBy = "endOfStudiesProject")
@@ -29,12 +28,15 @@ public class Internship extends Experience {
 	@ManyToOne
 	private Enterprise enterprise;
 
-	private String framing;
+	private String supervisor;
+
 	private boolean remuneration;
+
 	private boolean preEmployment;
+
 	private String job;
 
-	private List<String> technologies = new Vector<>();
+	private String technologies;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date startDate;
@@ -47,7 +49,7 @@ public class Internship extends Experience {
 		enterprise = new Enterprise();
 	}
 
-	public Internship(Integer id, String subject, Student student, Enterprise enterprise, List<String> technologies,
+	public Internship(Integer id, String subject, Student student, Enterprise enterprise, String technologies,
 			Date startDate, Date endDate) {
 		super();
 		this.id = id;
@@ -91,12 +93,12 @@ public class Internship extends Experience {
 		this.enterprise = enterprise;
 	}
 
-	public String getFraming() {
-		return framing;
+	public String getSupervisor() {
+		return supervisor;
 	}
 
-	public void setFraming(String framing) {
-		this.framing = framing;
+	public void setSupervisor(String supervisor) {
+		this.supervisor = supervisor;
 	}
 
 	public boolean isRemuneration() {
@@ -123,11 +125,11 @@ public class Internship extends Experience {
 		this.job = job;
 	}
 
-	public List<String> getTechnologies() {
+	public String getTechnologies() {
 		return technologies;
 	}
 
-	public void setTechnologies(List<String> technologies) {
+	public void setTechnologies(String technologies) {
 		this.technologies = technologies;
 	}
 
