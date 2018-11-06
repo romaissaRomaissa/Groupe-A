@@ -1,14 +1,16 @@
 package org.mql.platform.models;
 
-import java.util.Date;
+import java.time.LocalDate;
+
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  * @author mehdithe
@@ -36,26 +38,30 @@ public class Internship extends Experience {
 
 	private String job;
 
-	private String technologies;
+	@OneToMany
+	private List<Technology> technologies;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date startDate;
+	private LocalDate startDate;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date endDate;
+	private LocalDate endDate;
 
 	public Internship() {
 		student = new Student();
 		enterprise = new Enterprise();
 	}
 
-	public Internship(Integer id, String subject, Student student, Enterprise enterprise, String technologies,
-			Date startDate, Date endDate) {
+	public Internship(Integer id, String subject, Student student, Enterprise enterprise, String supervisor,
+			boolean remuneration, boolean preEmployment, String job, List<Technology> technologies, LocalDate startDate,
+			LocalDate endDate) {
 		super();
 		this.id = id;
 		this.subject = subject;
 		this.student = student;
 		this.enterprise = enterprise;
+		this.supervisor = supervisor;
+		this.remuneration = remuneration;
+		this.preEmployment = preEmployment;
+		this.job = job;
 		this.technologies = technologies;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -125,27 +131,27 @@ public class Internship extends Experience {
 		this.job = job;
 	}
 
-	public String getTechnologies() {
+	public List<Technology> getTechnologies() {
 		return technologies;
 	}
 
-	public void setTechnologies(String technologies) {
+	public void setTechnologies(List<Technology> technologies) {
 		this.technologies = technologies;
 	}
 
-	public Date getStartDate() {
+	public LocalDate getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getEndDate() {
+	public LocalDate getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
 	}
 
