@@ -6,12 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * @author chermehdi
  */
-public interface ActivityRepository extends JpaRepository<Activity, Long> {
+public interface ActivityRepository extends JpaRepository<Activity, String> {
 
 }
 //we can redefine methodes's mother class  
 //findBy id, findBy ..
-//repository
+//repositoryLOI
 // personDao  ---> personDaoRepository.
 //we don't need this anymore
 //class and id of class
