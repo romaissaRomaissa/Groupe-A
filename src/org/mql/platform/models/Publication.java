@@ -11,6 +11,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author mehdithe
@@ -36,9 +38,16 @@ public abstract class Publication {
 
   private String location;
 
-  private Date date;
+  @Temporal(TemporalType.DATE)
+  private Date publicationDate;
+  
+  @Temporal(TemporalType.TIME)
+  Date publicationTime;
 
-
+  @Temporal(TemporalType.TIMESTAMP)
+  Date creationDateTime;
+  
+  
   public Long getId() {
     return id;
   }
@@ -67,14 +76,6 @@ public abstract class Publication {
     this.location = location;
   }
 
-  public Date getDate() {
-    return date;
-  }
-
-  public void setDate(Date date) {
-    this.date = date;
-  }
-
   public void setId(Long id) {
     this.id = id;
   }
@@ -94,4 +95,30 @@ public abstract class Publication {
   public void setDocuments(Set<Document> documents) {
     this.documents = documents;
   }
+
+public Date getPublicationDate() {
+	return publicationDate;
+}
+
+public void setPublicationDate(Date publicationDate) {
+	this.publicationDate = publicationDate;
+}
+
+public Date getPublicationTime() {
+	return publicationTime;
+}
+
+public void setPublicationTime(Date publicationTime) {
+	this.publicationTime = publicationTime;
+}
+
+public Date getCreationDateTime() {
+	return creationDateTime;
+}
+
+public void setCreationDateTime(Date creationDateTime) {
+	this.creationDateTime = creationDateTime;
+}
+  
+  
 }

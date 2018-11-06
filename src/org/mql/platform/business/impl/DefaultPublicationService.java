@@ -1,6 +1,8 @@
-package org.mql.platform.business;
+package org.mql.platform.business.impl;
 
 import java.util.List;
+
+import org.mql.platform.business.PublicationService;
 import org.mql.platform.dao.ActivityRepository;
 import org.mql.platform.dao.EventRepository;
 import org.mql.platform.dao.NewsRepository;
@@ -10,7 +12,7 @@ import org.mql.platform.models.News;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-public class PublicationServiceImpl implements PublicationService{
+public class DefaultPublicationService implements PublicationService{
 
 	@Autowired
 	private ActivityRepository activityRepository;
@@ -22,7 +24,7 @@ public class PublicationServiceImpl implements PublicationService{
 	private NewsRepository newsRepository;
 	
 	
-	public PublicationServiceImpl() {
+	public DefaultPublicationService() {
 	}
 
 	@Transactional
