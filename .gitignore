@@ -3,6 +3,6 @@ build
 .settings
 out
 mql-platform.iml
-.project
 .classpath
+.project
 /bin/

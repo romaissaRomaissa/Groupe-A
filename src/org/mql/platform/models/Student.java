@@ -8,8 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  * @author mehdithe
@@ -40,7 +38,6 @@ public class Student extends User {
 
   private String cin;
 
-  @Temporal(TemporalType.DATE)
   private LocalDate birthday;
 
   @Enumerated

@@ -24,6 +24,9 @@ public class Module {
   @ManyToMany(mappedBy = "modules")
   private Set<Student> students;
 
+  public Module() {
+  }
+
   public Integer getId() {
     return id;
   }
