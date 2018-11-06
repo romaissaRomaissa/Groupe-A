@@ -17,21 +17,27 @@ public class Enterprise {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+
 	private String name;
+
 	private String city;
+
 	private String adresse;
 
 	@Column(unique = true)
 	private String email;
 
 	private String description;
+
 	private String website;
+
 	private String type;
 
 	@OneToMany(mappedBy = "enterprise")
 	private List<Internship> internships = new ArrayList<>();
 
 	private String coordinator;
+
 	private String phoneNumber;
 
 	public Enterprise() {
@@ -144,15 +150,9 @@ public class Enterprise {
 
 	@Override
 	public String toString() {
-		return "Enterprise [id=" + id + 
-				", name=" + name + 
-				", city=" + city +
-				", adresse=" + adresse +
-				", email="+ email +
-				", description=" + description + 
-				", type=" + type + 
-				", internships=" + internships+
-				", phoneNumber=" + phoneNumber + "]";
+		return "Enterprise [id=" + id + ", name=" + name + ", city=" + city + ", adresse=" + adresse + ", email="
+				+ email + ", description=" + description + ", type=" + type + ", internships=" + internships
+				+ ", phoneNumber=" + phoneNumber + "]";
 	}
 
 }
