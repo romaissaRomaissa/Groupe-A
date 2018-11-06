@@ -9,10 +9,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface ActivityRepository extends JpaRepository<Activity, Long> {
 
 }
-// on peut redefinier les methodes de la classe mere
+//we can redefine methodes's mother class  
 //findBy id, findBy ..
-//repository. mais il n'existe
-
-// personDao  --- personDaoRepository.
-//mnt plus besoind de sa 
-//intefger le type de l'identifiena de la classe'
+//repository
+// personDao  ---> personDaoRepository.
+//we don't need this anymore
+//class and id of class
