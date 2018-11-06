@@ -1,6 +1,7 @@
 package org.mql.platform.models;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,8 +20,8 @@ public class Education {
   private String label;
   private String place;
   private String city;
-  private Date start;
-  private Date end;
+  private LocalDate start;
+  private LocalDate end;
   public Education() {
   }
 
@@ -56,19 +57,19 @@ public void setCity(String city) {
 	this.city = city;
 }
 
-public Date getStart() {
+public LocalDate getStart() {
 	return start;
 }
 
-public void setStart(Date start) {
+public void setStart(LocalDate start) {
 	this.start = start;
 }
 
-public Date getEnd() {
+public LocalDate getEnd() {
 	return end;
 }
 
-public void setEnd(Date end) {
+public void setEnd(LocalDate end) {
 	this.end = end;
 }
   

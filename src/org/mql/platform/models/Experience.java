@@ -1,6 +1,6 @@
 package org.mql.platform.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,8 +20,8 @@ public abstract class Experience {
   @GeneratedValue(generator = "experience", strategy = GenerationType.TABLE)
   private Integer id;
   private String description;
-  private Date start;
-  private Date end;
+  private LocalDate start;
+  private LocalDate end;
   
   public Integer getId() {
     return id;
@@ -39,19 +39,19 @@ public void setDescription(String description) {
 	this.description = description;
 }
 
-public Date getStart() {
+public LocalDate getStart() {
 	return start;
 }
 
-public void setStart(Date start) {
+public void setStart(LocalDate start) {
 	this.start = start;
 }
 
-public Date getEnd() {
+public LocalDate getEnd() {
 	return end;
 }
 
-public void setEnd(Date end) {
+public void setEnd(LocalDate end) {
 	this.end = end;
 }
   
