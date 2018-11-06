@@ -7,19 +7,28 @@ import org.mql.platform.models.Event;
 import org.mql.platform.models.News;
 
 public interface PublicationService {
-	public List<Activity> getAllActivities();
-	public List<Event> getAllEvents();
-	public List<News> getAllNews();
 	
-	public Activity getAvtivity(Long id);
-	public Event getEvent(Long id);
-	public News getNews(Long id);
-	
-	public boolean addOrUpdateActivity(Activity activity);
-	public boolean addOrUpdateEvent(Event event);
-	public boolean addOrUpdateNews(News news);
-	
-	public void deleteActivity(Long id);
-	public void deleteEvent(Long id);
-	public void deleteNews(Long id);
+	List<Activity> getAllActivities();
+
+	List<Event> getAllEvents();
+
+	List<News> getAllNews();
+
+	Activity getAvtivity(Long id);
+
+	Event getEvent(Long id);
+
+	News getNews(Long id);
+
+	boolean addOrUpdateActivity(Activity activity);
+
+	boolean addOrUpdateEvent(Event event);
+
+	boolean addOrUpdateNews(News news);
+
+	void deleteActivity(Long id);
+
+	void deleteEvent(Long id);
+
+	void deleteNews(Long id);
 }

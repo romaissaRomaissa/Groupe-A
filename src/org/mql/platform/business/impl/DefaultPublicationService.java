@@ -23,36 +23,26 @@ public class DefaultPublicationService implements PublicationService{
 	@Autowired
 	private NewsRepository newsRepository;
 	
-	
-	public DefaultPublicationService() {
-	}
-
-	@Transactional
 	public List<Activity> getAllActivities() {
 		return activityRepository.findAll();
 	}
 
-	@Transactional
 	public List<Event> getAllEvents() {
 		return eventRepository.findAll();
 	}
 
-	@Transactional
 	public List<News> getAllNews() {
 		return newsRepository.findAll();
 	}
 
-	@Transactional
 	public Activity getAvtivity(Long id) {
 		return  activityRepository.getOne(id);
 	}
 
-	@Transactional
 	public Event getEvent(Long id) {
 		return eventRepository.getOne(id);
 	}
 
-	@Transactional
 	public News getNews(Long id) {
 		return newsRepository.getOne(id);
 	}
