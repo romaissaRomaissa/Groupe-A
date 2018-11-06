@@ -12,5 +12,4 @@ public class DefaultAuthenticationService implements AuthenticationService {
     // do the logic here
     return null;
   }
-
 }
