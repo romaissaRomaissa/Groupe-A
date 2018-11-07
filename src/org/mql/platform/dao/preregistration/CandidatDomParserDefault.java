@@ -13,16 +13,18 @@ import org.springframework.core.env.ConfigurableEnvironment;
  *  DOM parser with :
  *  add method for adding a new candidate to the xml file
  *  update method for updating and saving candidate to the xml file
+ *  
+ *  N.B : The path must be specified as a VM argument(named xmlPath)
  */
+
 public class CandidatDomParserDefault implements CandidatDomParser {
 
 	private List<Candidat> candidates;
 	@Autowired
-	private ConfigurableEnvironment conf; /*to configure*/
+	private ConfigurableEnvironment conf; 
 	private String path;
 
 	public CandidatDomParserDefault() {
-		loadData();
 	}
 
 	public void addCandidat(Candidat candidat) {
@@ -51,7 +53,8 @@ public class CandidatDomParserDefault implements CandidatDomParser {
 	
 	
 	
-	private List<Candidat> loadData() {
+	public List<Candidat> loadData() {
+		path = conf.getProperty("filePath");
 		candidates = new Vector<>();
 		XMLNode root = new XMLNode(path);
 		Vector<XMLNode> list = root.getChildren();
