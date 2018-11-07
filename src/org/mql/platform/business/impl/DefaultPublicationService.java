@@ -35,7 +35,7 @@ public class DefaultPublicationService implements PublicationService{
 		return newsRepository.findAll();
 	}
 
-	public Activity getAvtivity(Long id) {
+	public Activity getActivity(Long id) {
 		return  activityRepository.getOne(id);
 	}
 

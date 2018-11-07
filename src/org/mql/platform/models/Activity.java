@@ -1,5 +1,7 @@
 package org.mql.platform.models;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -14,47 +16,47 @@ import javax.persistence.TemporalType;
 @Entity
 public class Activity extends Publication {
 
-	private String category;
+  private String category;
 
-	@ElementCollection
-	private List<String> guests;
+  @ElementCollection
+  private List<String> guests;
 
-	@Temporal(TemporalType.DATE)
-	Date activityDate;
+  private LocalDate activityDate;
 
-	@Temporal(TemporalType.TIME)
-	Date activityTime;
+  private LocalDateTime activityTime;
 
-	public String getCategory() {
-		return category;
-	}
+  public Activity() {
+  }
 
-	public void setCategory(String category) {
-		this.category = category;
-	}
+  public String getCategory() {
+    return category;
+  }
 
-	public List<String> getGuests() {
-		return guests;
-	}
+  public void setCategory(String category) {
+    this.category = category;
+  }
 
-	public void setGuests(List<String> guests) {
-		this.guests = guests;
-	}
+  public List<String> getGuests() {
+    return guests;
+  }
 
-	public Date getActivityDate() {
-		return activityDate;
-	}
+  public void setGuests(List<String> guests) {
+    this.guests = guests;
+  }
 
-	public void setActivityDate(Date activityDate) {
-		this.activityDate = activityDate;
-	}
+  public LocalDate getActivityDate() {
+    return activityDate;
+  }
 
-	public Date getActivityTime() {
-		return activityTime;
-	}
+  public void setActivityDate(LocalDate activityDate) {
+    this.activityDate = activityDate;
+  }
 
-	public void setActivityTime(Date activityTime) {
-		this.activityTime = activityTime;
-	}
+  public LocalDateTime getActivityTime() {
+    return activityTime;
+  }
 
+  public void setActivityTime(LocalDateTime activityTime) {
+    this.activityTime = activityTime;
+  }
 }

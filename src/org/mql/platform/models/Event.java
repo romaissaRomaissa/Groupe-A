@@ -1,5 +1,6 @@
 package org.mql.platform.models;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.ElementCollection;
@@ -13,40 +14,38 @@ import javax.persistence.TemporalType;
 @Entity
 public class Event extends Publication {
 
-	@ElementCollection
-	private List<String> guests;
+  @ElementCollection
+  private List<String> guests;
 
-	@ElementCollection
-	private List<String> organizers;
+  @ElementCollection
+  private List<String> organizers;
 
-	@Temporal(TemporalType.DATE)
-	Date eventDate;
+  private LocalDate eventDate;
 
-	public Event() {
-	}
+  public Event() {
+  }
 
-	public List<String> getGuests() {
-		return guests;
-	}
+  public List<String> getGuests() {
+    return guests;
+  }
 
-	public void setGuests(List<String> guests) {
-		this.guests = guests;
-	}
+  public void setGuests(List<String> guests) {
+    this.guests = guests;
+  }
 
-	public List<String> getOrganizers() {
-		return organizers;
-	}
+  public List<String> getOrganizers() {
+    return organizers;
+  }
 
-	public void setOrganizers(List<String> organizers) {
-		this.organizers = organizers;
-	}
+  public void setOrganizers(List<String> organizers) {
+    this.organizers = organizers;
+  }
 
-	public Date getEventDate() {
-		return eventDate;
-	}
+  public LocalDate getEventDate() {
+    return eventDate;
+  }
 
-	public void setEventDate(Date eventDate) {
-		this.eventDate = eventDate;
-	}
-
+  public void setEventDate(LocalDate eventDate) {
+    this.eventDate = eventDate;
+  }
 }

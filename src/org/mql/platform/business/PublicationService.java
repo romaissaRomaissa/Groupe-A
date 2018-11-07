@@ -14,7 +14,7 @@ public interface PublicationService {
 
 	List<News> getAllNews();
 
-	Activity getAvtivity(Long id);
+	Activity getActivity(Long id);
 
 	Event getEvent(Long id);
 
