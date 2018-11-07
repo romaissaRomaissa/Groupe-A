@@ -3,172 +3,187 @@ package org.mql.platform.models.preregistration;
 import java.util.List;
 import java.util.Vector;
 
-/*Candidates diplomas will become documents afterwards */
+/**
+ * Candidates diplomas will become documents afterwards
+ *
+ * @author OussamaElrh
+ */
 public class Diploma {
 
-	private String title;
-	private String univercity; 
-	private String college;
-	private String speciality;
-	private String district; 
-	private int year;
-	private int coef;
-	private String mention;
-	private double grade;
-	private String city;
-	private List<Mark> marks;
+  private String title;
 
-	public Diploma() {
+  private String university;
 
-	}
-      
-	public Diploma(String title, String univercity, String college, String speciality, String district, int year,
-			int coef, String mention, double grade, String city, List<Mark> marks) {
-		setTitle(title);
-		setUnivercity(univercity);
-		setCollege(college);
-		setSpeciality(speciality);
-		setDistrict(district);
-		setYear(year);
-		setCoef(coef);
-		setMention(mention);
-		setGrade(grade);
-		setCity(city);
-		setMarks(marks);
-	}
+  private String college;
 
-	public String getTitle() {
-		return title;
-	}
+  private String speciality;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+  private String district;
 
-	public String getUnivercity() {
-		return univercity;
-	}
+  private int year;
 
-	public void setUnivercity(String univercity) {
-		this.univercity = univercity;
-	}
+  private int coef;
 
-	public String getCollege() {
-		return college;
-	}
+  private String mention;
 
-	public void setCollege(String college) {
-		this.college = college;
-	}
+  private double grade;
 
-	public String getSpeciality() {
-		return speciality;
-	}
+  private String city;
 
-	public void setSpeciality(String speciality) {
-		this.speciality = speciality;
-	}
+  private List<Mark> marks;
 
-	public String getDistrict() {
-		return district;
-	}
+  public Diploma() {
 
-	public void setDistrict(String district) {
-		this.district = district;
-	}
+  }
 
-	public int getYear() {
-		return year;
-	}
+  public Diploma(String title, String university, String college, String speciality,
+      String district, int year,
+      int coef, String mention, double grade, String city, List<Mark> marks) {
+    setTitle(title);
+    setUniversity(university);
+    setCollege(college);
+    setSpeciality(speciality);
+    setDistrict(district);
+    setYear(year);
+    setCoef(coef);
+    setMention(mention);
+    setGrade(grade);
+    setCity(city);
+    setMarks(marks);
+  }
 
-	public void setYear(int year) {
-		this.year = year;
-	}
+  public String getTitle() {
+    return title;
+  }
 
-	public int getCoef() {
-		return coef;
-	}
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
-	public void setCoef(int coef) {
-		this.coef = coef;
-	}
+  public String getUniversity() {
+    return university;
+  }
 
-	public String getMention() {
-		return mention;
-	}
+  public void setUniversity(String university) {
+    this.university = university;
+  }
 
-	public void setMention(String mention) {
-		this.mention = mention;
-	}
+  public String getCollege() {
+    return college;
+  }
 
-	public double getGrade() {
-		return grade;
-	}
+  public void setCollege(String college) {
+    this.college = college;
+  }
 
-	public void setGrade(double grade) {
-		this.grade = grade;
-	}
+  public String getSpeciality() {
+    return speciality;
+  }
 
-	public String getCity() {
-		return city;
-	}
+  public void setSpeciality(String speciality) {
+    this.speciality = speciality;
+  }
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+  public String getDistrict() {
+    return district;
+  }
 
-	public List<Mark> getMarks() {
-		return marks;
-	}
+  public void setDistrict(String district) {
+    this.district = district;
+  }
 
-	public void setMarks(List<Mark> marks) {
-		this.marks = new Vector<Mark>();
-		for (Mark mark : marks) {
-			this.marks.add(mark);
-		}
-	}
+  public int getYear() {
+    return year;
+  }
 
-	
-	public String toString() {
-		return "Diploma [title=" + title + ", univesity=" + univercity + ", college=" + college + ", speciality="
-				+ speciality + ", district=" + district + ", year=" + year + ", coef=" + coef + ", mention=" + mention
-				+ ", grade=" + grade + ", city=" + city + ", degrees=" + marks + "]";
-	}
-	
-	public String toXml() {
-		StringBuffer xml = new StringBuffer("<diploma year ='" + getYear() + "' coef ='" + getCoef() + "'>");
-		xml.append("<title>");
-			xml.append(getTitle());
-		xml.append("</title>");
-		xml.append("<univercity>");
-			xml.append(getUnivercity());
-		xml.append("</univercity>");
-		xml.append("<college>");
-			xml.append(getCollege());
-		xml.append("</college>");
-		xml.append("<speciality>");
-			xml.append(getSpeciality());
-		xml.append("</speciality>");
-		xml.append("<district>");
-			xml.append(getDistrict());
-		xml.append("</district>");
-		xml.append("<grade>");
-			xml.append(getGrade());
-		xml.append("</grade>");
-		xml.append("<mention>");
-			xml.append(getMention());
-		xml.append("</mention>");
-		xml.append("<city>");
-			xml.append(getCity());
-		xml.append("</city>");
-		xml.append("<marks>");
-			for (Mark mark : marks) {
-				xml.append(mark.toXml());
-			}
-		xml.append("</marks>");
-		xml.append("</diploma>");
-		return xml.toString();
-	}
-	
-	
+  public void setYear(int year) {
+    this.year = year;
+  }
+
+  public int getCoef() {
+    return coef;
+  }
+
+  public void setCoef(int coef) {
+    this.coef = coef;
+  }
+
+  public String getMention() {
+    return mention;
+  }
+
+  public void setMention(String mention) {
+    this.mention = mention;
+  }
+
+  public double getGrade() {
+    return grade;
+  }
+
+  public void setGrade(double grade) {
+    this.grade = grade;
+  }
+
+  public String getCity() {
+    return city;
+  }
+
+  public void setCity(String city) {
+    this.city = city;
+  }
+
+  public List<Mark> getMarks() {
+    return marks;
+  }
+
+  public void setMarks(List<Mark> marks) {
+    this.marks = new Vector<>();
+    this.marks.addAll(marks);
+  }
+
+
+  public String toString() {
+    return "Diploma [title=" + title + ", univesity=" + university + ", college=" + college
+        + ", speciality="
+        + speciality + ", district=" + district + ", year=" + year + ", coef=" + coef + ", mention="
+        + mention
+        + ", grade=" + grade + ", city=" + city + ", degrees=" + marks + "]";
+  }
+
+  // TODO: should be refactored to use JAXB
+  public String toXml() {
+    StringBuffer xml = new StringBuffer(
+        "<diploma year ='" + getYear() + "' coef ='" + getCoef() + "'>");
+    xml.append("<title>");
+    xml.append(getTitle());
+    xml.append("</title>");
+    xml.append("<university>");
+    xml.append(getUniversity());
+    xml.append("</university>");
+    xml.append("<college>");
+    xml.append(getCollege());
+    xml.append("</college>");
+    xml.append("<speciality>");
+    xml.append(getSpeciality());
+    xml.append("</speciality>");
+    xml.append("<district>");
+    xml.append(getDistrict());
+    xml.append("</district>");
+    xml.append("<grade>");
+    xml.append(getGrade());
+    xml.append("</grade>");
+    xml.append("<mention>");
+    xml.append(getMention());
+    xml.append("</mention>");
+    xml.append("<city>");
+    xml.append(getCity());
+    xml.append("</city>");
+    xml.append("<marks>");
+    for (Mark mark : marks) {
+      xml.append(mark.toXml());
+    }
+    xml.append("</marks>");
+    xml.append("</diploma>");
+    return xml.toString();
+  }
 }

@@ -1,46 +1,50 @@
 package org.mql.platform.models.preregistration;
 
-/* Candidates diplomas marks*/
+/**
+ * Candidates diplomas marks
+ *
+ * @author OussamaElrh
+ **/
 public class Mark {
 
-	private String semester;
-	private double value;
+  private String semester;
 
-	public String getSemester() {
-		return semester;
-	}
+  private double value;
 
-	public void setSemester(String semester) {
-		this.semester = semester;
-	}
+  public Mark() {
+  }
 
-	public double getValue() {
-		return value;
-	}
+  public Mark(String semester, double value) {
+    this.semester = semester;
+    this.value = value;
+  }
 
-	public void setValue(double value) {
-		this.value = value;
-	}
+  public String getSemester() {
+    return semester;
+  }
 
-	public Mark(String semester, double value) {
-		super();
-		this.semester = semester;
-		this.value = value;
-	}
+  public void setSemester(String semester) {
+    this.semester = semester;
+  }
 
-	public String toString() {
-		return "Degree [semester=" + semester + ", value=" + value + "]";
-	}
+  public double getValue() {
+    return value;
+  }
 
-	public Mark() {
-		// TODO Auto-generated constructor stub
-	}
+  public void setValue(double value) {
+    this.value = value;
+  }
 
-	public String toXml() {
-		return "<mark>" + 
-					"<semester>" + getSemester() + "</semester>" + 
-					"<value>" + getValue() + "</value>" + 
-				"</mark>";
-	}
+  public String toString() {
+    return "Degree [semester=" + semester + ", value=" + value + "]";
+  }
+
+  // TODO: to be refactored to use something like JAXB
+  public String toXml() {
+    return "<mark>" +
+        "<semester>" + getSemester() + "</semester>" +
+        "<value>" + getValue() + "</value>" +
+        "</mark>";
+  }
 
 }
