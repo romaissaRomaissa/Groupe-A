@@ -119,8 +119,7 @@ public class CandidateDomParserDefault implements CandidateDomParser {
     }
 
     xml.append("</candidats>");
-    // TODO: change to  File file = new File(path + File.separator + LocaDate.now().getYear());
-    File file = new File(path);
+    File file = new File(path + File.separator + LocalDate.now().getYear());
     try {
       if (!file.exists()) {
         file.createNewFile();
