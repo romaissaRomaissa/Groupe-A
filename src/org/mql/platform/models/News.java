@@ -8,6 +8,17 @@ import javax.persistence.Entity;
 @Entity
 public class News extends Publication {
 
-  public News() {
-  }
+	private NewsPriority priority;
+
+	public News() {
+	}
+
+	public NewsPriority getPriority() {
+		return priority;
+	}
+
+	public void setPriority(NewsPriority priority) {
+		this.priority = priority;
+	}
+
 }
