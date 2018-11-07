@@ -8,21 +8,30 @@ import org.mql.platform.models.Laureate;
 import org.mql.platform.models.Technology;
 
 public interface CurriculumService {
-	public Laureate getLaureate(Integer id);
-	
-	public List<Technology> getAllTechnologys();
-	public List<Education> getAllEducations();
-	public List<Experience> getAllExperiences();
-	
-	public Technology getTechnology(Integer id);
-	public Education getEducation(Integer id);
-	public Experience getExperience(Integer id);
-	
-	public boolean addOrUpdateTechnology(Technology technology);
-	public boolean addOrUpdateEducation(Education education);
-	public boolean addOrUpdateExperience(Experience experience);
-	
-	public void deleteTechnology(Integer id);
-	public void deleteEducation(Integer id);
-	public void deleteExperience(Integer id);
+
+  Laureate getLaureate(Integer id);
+
+  List<Technology> getAllTechnologys();
+
+  List<Education> getAllEducations();
+
+  List<Experience> getAllExperiences();
+
+  Technology getTechnology(Integer id);
+
+  Education getEducation(Integer id);
+
+  Experience getExperience(Integer id);
+
+  boolean addOrUpdateTechnology(Technology technology);
+
+  boolean addOrUpdateEducation(Education education);
+
+  boolean addOrUpdateExperience(Experience experience);
+
+  void deleteTechnology(Integer id);
+
+  void deleteEducation(Integer id);
+
+  void deleteExperience(Integer id);
 }
