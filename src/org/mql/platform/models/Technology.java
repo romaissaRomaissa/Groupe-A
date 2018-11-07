@@ -14,7 +14,9 @@ public class Technology {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
+
   private String label;
+
   public Technology() {
   }
 
@@ -26,12 +28,11 @@ public class Technology {
     this.id = id;
   }
 
-public String getLabel() {
-	return label;
-}
+  public String getLabel() {
+    return label;
+  }
 
-public void setLabel(String label) {
-	this.label = label;
-}
-  
+  public void setLabel(String label) {
+    this.label = label;
+  }
 }
