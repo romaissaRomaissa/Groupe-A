@@ -1,6 +1,7 @@
 package org.mql.platform.models;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 
 /**
  * @author mehdithe
@@ -8,17 +9,18 @@ import javax.persistence.Entity;
 @Entity
 public class News extends Publication {
 
-	private NewsPriority priority;
+  @Enumerated
+  private NewsPriority priority;
 
-	public News() {
-	}
+  public News() {
+  }
 
-	public NewsPriority getPriority() {
-		return priority;
-	}
+  public NewsPriority getPriority() {
+    return priority;
+  }
 
-	public void setPriority(NewsPriority priority) {
-		this.priority = priority;
-	}
+  public void setPriority(NewsPriority priority) {
+    this.priority = priority;
+  }
 
 }

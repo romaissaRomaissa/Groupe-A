@@ -38,7 +38,6 @@ public abstract class Publication {
 
 	private String location;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	private LocalDateTime publicationDate;
 
 	public Long getId() {
