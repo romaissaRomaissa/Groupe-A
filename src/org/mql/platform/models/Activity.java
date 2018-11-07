@@ -1,9 +1,12 @@
 package org.mql.platform.models;
 
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * @author mehdithe
@@ -11,25 +14,47 @@ import javax.persistence.Entity;
 @Entity
 public class Activity extends Publication {
 
-  private String category;
+	private String category;
 
-  @ElementCollection
-  private List<String> guests = new ArrayList<>();
+	@ElementCollection
+	private List<String> guests;
 
-  public String getCategory() {
-    return category;
-  }
+	@Temporal(TemporalType.DATE)
+	Date activityDate;
 
-  public void setCategory(String category) {
-    this.category = category;
-  }
+	@Temporal(TemporalType.TIME)
+	Date activityTime;
 
-  public List<String> getGuests() {
-    return guests;
-  }
+	public String getCategory() {
+		return category;
+	}
 
-  public void setGuests(List<String> guests) {
-    this.guests = guests;
-  }
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public List<String> getGuests() {
+		return guests;
+	}
+
+	public void setGuests(List<String> guests) {
+		this.guests = guests;
+	}
+
+	public Date getActivityDate() {
+		return activityDate;
+	}
+
+	public void setActivityDate(Date activityDate) {
+		this.activityDate = activityDate;
+	}
+
+	public Date getActivityTime() {
+		return activityTime;
+	}
+
+	public void setActivityTime(Date activityTime) {
+		this.activityTime = activityTime;
+	}
 
 }
