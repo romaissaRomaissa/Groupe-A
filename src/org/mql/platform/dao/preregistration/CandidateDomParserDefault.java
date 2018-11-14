@@ -89,7 +89,7 @@ public class CandidateDomParserDefault implements CandidateDomParser {
         diploma.setDistrict(b.getChild("district").getValue());
         diploma.setYear(b.getIntAttribute("year"));
         diploma.setCoef(b.getIntAttribute("coef"));
-        diploma.setMention(b.getChild("mention").getValue());
+//        diploma.setMention(b.getChild("mention").getValue());
         diploma.setGrade(b.getChild("grade").getDoubleValue());
         diploma.setCity(b.getChild("city").getValue());
         /*******************/
