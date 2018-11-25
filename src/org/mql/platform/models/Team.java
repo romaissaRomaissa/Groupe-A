@@ -1,10 +1,11 @@
 package org.mql.platform.models;
 
+import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
 
 /**
  * @author chermehdi
@@ -15,41 +16,20 @@ public class Team {
   @EmbeddedId
   private TeamId id;
 
-
   @ManyToMany
-  private Set<Student> students;
+  private Set<Student> members = new HashSet<>();
 
-  @ManyToMany(mappedBy = "teams")
-  private Set<Project> projects;
+  private LocalDate creationYear = LocalDate.now();
 
-  @OneToOne
-  private Student teamLeader;
-
-  public Team() {}
-
-  public Set<Student> getStudents() {
-    return students;
+  public Team() {
   }
 
-  public void setStudents(Set<Student> students) {
-    this.students = students;
+  public Set<Student> getMembers() {
+    return members;
   }
 
-  public Set<Project> getProjects() {
-    return projects;
-  }
-
-  public void setProjects(Set<Project> projects) {
-    this.projects = projects;
-  }
-
-
-  public Student getTeamLeader() {
-    return teamLeader;
-  }
-
-  public void setTeamLeader(Student teamLeader) {
-    this.teamLeader = teamLeader;
+  public void setMembers(Set<Student> members) {
+    this.members = members;
   }
 
   public TeamId getId() {
@@ -58,5 +38,21 @@ public class Team {
 
   public void setId(TeamId id) {
     this.id = id;
+  }
+
+  public String getName() {
+    return id.getName();
+  }
+
+  public void setName(String name) {
+    this.id.setName(name);
+  }
+
+  public LocalDate getCreationYear() {
+    return creationYear;
+  }
+
+  public void setCreationYear(LocalDate year) {
+    this.creationYear = year;
   }
 }

@@ -1,4 +1,4 @@
-package org.mql.platform.business.projects;
+package org.mql.platform.business.projects.impl;
 
 import java.util.Optional;
 import java.util.Set;

@@ -1,8 +1,7 @@
-package org.mql.platform.business.impl;
+package org.mql.platform.business.media.impl;
 
 import java.util.List;
 
-import org.mql.platform.business.PublicationService;
 import org.mql.platform.dao.ActivityRepository;
 import org.mql.platform.dao.EventRepository;
 import org.mql.platform.dao.NewsRepository;

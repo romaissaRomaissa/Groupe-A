@@ -1,4 +1,4 @@
-package org.mql.platform.business.projects;
+package org.mql.platform.business.projects.impl;
 
 import java.util.Set;
 import org.mql.platform.models.Document;
