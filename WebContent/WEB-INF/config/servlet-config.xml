@@ -16,6 +16,8 @@
     up static resources in the ${webappRoot}/resources directory -->
   <mvc:resources mapping="/resources/**" location="/resources/"/>
 
+  <!-- forward the request to the spring servlet  -->
+  <mvc:default-servlet-handler/>
 
   <!-- enable annotation injections -->
   <context:annotation-config/>
