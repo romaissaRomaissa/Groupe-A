@@ -20,11 +20,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(
-    {
-        "file:WebContent/WEB-INF/config/test-root-context.xml",
-    }
-)
+@ContextConfiguration({"file:WebContent/WEB-INF/config/test-root-context.xml",})
 public class TestExample {
 
   @Autowired

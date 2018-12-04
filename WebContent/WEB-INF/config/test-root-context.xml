@@ -9,13 +9,20 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+  <bean class="org.h2.tools.Server" destroy-method="stop" factory-method="createWebServer"
+    id="h2WebServer" init-method="start">
+    <constructor-arg value="-web,-webAllowOthers,-webDaemon,-webPort,8082"/>
+  </bean>
+
   <!-- Root Context: defines shared resources visible to all other web components -->
   <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="datasource">
-    <property name="url" value="jdbc:mysql://localhost:3306/mql_platform"/>
-    <property name="username" value="root"/>
-    <property name="password" value="root"/>
-    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:h2:mem:mql-platform;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>
+    <property name="username" value="sa"/>
+    <property name="password" value=""/>
+    <property name="driverClassName" value="org.h2.Driver"/>
   </bean>
+
+
   <mvc:annotation-driven/>
 
   <!-- Handles HTTP GET requests for /resources/** by efficiently serving
@@ -42,11 +49,12 @@
   <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
     <property name="templateEngine" ref="templateEngine"/>
   </bean>
+
   <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
     name="jpaVendorAdapter">
     <property name="showSql" value="true"/>
     <property name="generateDdl" value="true"/>
-    <property name="database" value="MYSQL"/>
+    <property name="database" value="H2"/>
   </bean>
 
   <!-- Defining the entity manager factory implementation -->
@@ -57,8 +65,8 @@
     <property name="packagesToScan" value="org.mql.platform.models"/>
     <property name="jpaProperties">
       <props>
-        <prop key="hibernate.dialect">org.hibernate.dialect.MySQL57Dialect</prop>
-        <prop key="javax.persistence.schema-generation.database.action">create-drop</prop>
+        <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+        <prop key="javax.persistence.schema-generation.database.action">create</prop>
       </props>
     </property>
   </bean>
