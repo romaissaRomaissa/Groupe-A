@@ -1,16 +1,11 @@
 package org.mql.platform.models;
 
 import java.time.LocalDate;
-
 import java.util.Date;
 import java.util.List;
-
 import java.util.Set;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -23,10 +18,6 @@ import javax.persistence.TemporalType;
  */
 @Entity
 public class Internship extends Experience {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
 
   private String subject;
 
@@ -63,8 +54,6 @@ public class Internship extends Experience {
   private double mark;
 
   public Internship() {
-    student = new Student();
-    enterprise = new Enterprise();
   }
 
   public Internship(Integer id, String subject, Student student, Enterprise enterprise,
@@ -73,7 +62,6 @@ public class Internship extends Experience {
       LocalDate startDate,
       LocalDate endDate) {
     super();
-    this.id = id;
     this.subject = subject;
     this.student = student;
     this.enterprise = enterprise;

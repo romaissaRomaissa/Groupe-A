@@ -23,7 +23,7 @@ generating the war any web container will suffice, (here we used tomcat) .
 - Follow java coding conventions
 - Inject environment variables for stuff that shouldn't be stored in your code such as, paths that depend on the machine where the app is deployed, and document it in case you did so that people trying to run the project after you don't fall into errors because of that .
 - Add files such as `.classpath` `.project` to your `.gitignore` file and do a git rm those files so they won't be tracked by git cause it causes errors for most of the people after pulling the code again .
-
+- If you ever had to name your tables explicitly, prefix them with the `MQL` for convenience
 ###### Injecting Env variables
 - you can inject env variables and access them in your spring managed beans if you pass them as a VM argument or you export them in your `.bashrc` or `.bashprofile`
 ```java
